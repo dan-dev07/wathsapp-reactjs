@@ -53,7 +53,7 @@ export const SeleccionarUsuario = ({ datos, actualizar }) => {
       setOptions(aux);
     };
     opc();
-  }, []);
+  }, [sinAsignar]);
 
   return (
     <Space wrap>

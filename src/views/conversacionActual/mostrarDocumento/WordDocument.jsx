@@ -4,7 +4,7 @@ import { handleDownload } from "../../../utils/descargaArchivo";
 
 export const WordDocument = ({ mensaje }) => {
   const {urlDocumento, tipo, filename} = mensaje;
-  const [nombreDoc] = urlDocumento.split("/");
+  const [telefono, nombreDoc] = urlDocumento.split("/");
   
   return (
     <div className={`message ${mensaje.emisor}`}

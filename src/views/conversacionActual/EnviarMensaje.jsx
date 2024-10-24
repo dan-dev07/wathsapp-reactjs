@@ -36,7 +36,7 @@ export const EnviarMensaje = () => {
       leido: false,
       emisor: 'Escotel',
       user,
-      tipo:"text"
+      tipo: "text"
     }, ultimoMensaje => {
       // console.log('ultimo mensaje', ultimoMensaje);
       if (!ultimoMensaje.err) {
@@ -46,14 +46,17 @@ export const EnviarMensaje = () => {
     setMensaje('');
   };
   return (
-    <form onSubmit={onSubmit}>
-      <Row >
+    <>
+      <Row  >
+
         <Col span={18} >
-          <InputText
-            placeholder={'Mensaje...'}
-            value={mensaje}
-            onChange={onChange}
-          />
+          <form onSubmit={onSubmit}>
+            <InputText
+              placeholder={'Mensaje...'}
+              value={mensaje}
+              onChange={onChange}
+            />
+          </form>
         </Col>
         <Col span={2}>
           <Button
@@ -64,7 +67,10 @@ export const EnviarMensaje = () => {
         <Col span={2}>
           <CompartirArchivo setArchivo={setArchivo} />
         </Col>
+
       </Row>
-    </form>
+
+    </>
+
   )
 }

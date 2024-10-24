@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { EnviarMensaje } from './EnviarMensaje';
 import { SocketContext } from '../../context/SocketContext';
@@ -18,7 +18,6 @@ export const ConversacionActual = () => {
 
   const getMensajes = () => {
     const { email, id } = user;
-
     socket?.emit('conversacion-actual', { telefono, email, id }, actual => {
       dispatch(startSetConversacionActual(actual, telefono));
     });
@@ -27,7 +26,7 @@ export const ConversacionActual = () => {
   useEffect(() => {
     getMensajes();
   }, []);
-  
+
   return (
     <div className='fondo' style={{ display: 'flex', justifyContent: 'center' }}>
       <div className="chat-container">
